@@ -1,3 +1,5 @@
+##NAME: SANJAY K
+##REG NO: 212223220094
 EXP NO:16 C PROGRAM TO SEARCH A GIVEN ELEMENT IN THE GIVEN LINKED LIST.
 Aim:
 To write a C program to search a given element in the given linked list.
@@ -9,12 +11,49 @@ Algorithm:
 4.	Call the search function and perform other linked list operations as needed.
  
 Program:
+```
+struct Node{
+    float data; 
+    struct Node *next;
+}*head;
 
-//type your code here
+void search(float daa)
+{
+    struct Node*temp=head;
+    int i=0,flag=0;
+    if(temp==NULL)
+    {
+        printf("The list is empty\n");
+    }
+    else
+    {
+        while(temp!=NULL)
+        {
+            i++;
+            if(temp->data==daa)
+            {
+                flag++;
+                break;
+            }
+            temp=temp->next;
+        }
+        if(flag>0 && i>0)
+        {
+            printf("item %.2f found at location %d",daa,i);
+        }
+        else
+        {
+            printf("Item not found");
+        }
+    }
+}
 
+
+
+```
 Output:
 
-//paste your output here
+![Screenshot 2025-04-26 200634](https://github.com/user-attachments/assets/7dcf8d8b-47f7-411a-aeb5-66474d24a571)
 
 
 
@@ -33,12 +72,38 @@ Algorithm:
 4.	Call the insert function and perform other linked list operations as needed.
  
 Program:
+```
+struct Node{
+    char data; 
+    struct Node *next;
+}*head;
 
-//type your code here
 
+void insert(char data)
+{
+    struct Node *n=(struct Node*)malloc(sizeof(struct Node));
+    struct Node *temp;
+    if(head==NULL)
+    {
+        head=n;
+        head->data=data;
+        n->next=NULL;
+        return;
+    }
+    temp=head;
+    while(temp->next!=NULL)
+    {
+        temp=temp->next;
+    }
+    n->data=data;
+    n->next=NULL;
+    temp->next=n;
+}
+```
 Output:
 
-//paste your output here
+![image](https://github.com/user-attachments/assets/70428b0c-fdb4-4f28-9e70-828bc4e363bf)
+
 
  
 Result:
@@ -57,12 +122,39 @@ Algorithm:
 4.	Move to the next node by updating the temp pointer to point to the next node (temp = temp->next).
  
 Program:
+```
+struct Node
+{
+    struct Node *prev;
+    struct Node *next;
+    int data;
+}*head;
 
-//type your code here
+void display()
+{
+    struct Node *temp=head;
+    if(temp==NULL)
+    {
+        printf("List is empty\n");
+    }
+    else
+    {
+        while(temp!=NULL)
+        {
+            printf("%d\n",temp->data);
+            temp=temp->next;
+        }
+    }
+    
+    
+    
+}
+```
 
 Output:
 
-//paste your output here
+![Screenshot 2025-04-26 200951](https://github.com/user-attachments/assets/307bedca-3fb7-4fde-b6c1-e0d65ac22da3)
+
 
 
 Result:
@@ -82,12 +174,48 @@ Algorithm:
 5.	Set the new node's prev pointer to the last node and update the last node's next pointer to the new node.
  
 Program:
+```
+struct Node
+{
+    struct Node *prev;
+    struct Node *next;
+    char data;
+}*head;
 
-//type your code here
-
+void insert(int data)
+{
+    struct Node *ptr,*temp;
+    ptr=(struct Node*)malloc(sizeof(struct Node));
+    if(ptr==NULL)
+    {
+        printf("OVERFLOW\n");
+    }
+    else
+    {
+        ptr->data=data;
+        if(head==NULL)
+        {
+            ptr->next=NULL;
+            ptr->prev=NULL;
+            head=ptr;
+        }
+        else
+        {
+            temp=head;
+            while(temp->next!=NULL)
+            {
+                temp=temp->next;
+            }
+            temp->next=ptr;
+            ptr->prev=temp;
+            ptr->next=NULL;
+        }
+    }
+}
+```
 Output:
 
-//paste your output here
+![Screenshot 2025-04-26 201203](https://github.com/user-attachments/assets/d51bd442-258d-4068-9fb3-8a02df4a5e32)
 
 
 Result:
@@ -124,12 +252,28 @@ o	If the element is not found in any node, print a message indicating the elemen
 
 
 Program:
-
-//type your code here
-
+```
+struct Node{
+    float data; 
+    struct Node *next;
+}*head;
+void delete()
+{
+    if(head==NULL)
+    {
+        printf("List is empty\n");
+    }
+    else
+    {
+        head=head->next;
+        printf("Node deleted from the begining ...\n");
+    }
+    
+}
+```
 Output:
 
-//paste your output here
+![Screenshot 2025-04-26 201531](https://github.com/user-attachments/assets/ab76d4de-44f7-4880-94e3-4cd8da10d918)
 
 
 
