@@ -108,10 +108,22 @@ Algorithm:
 5.	Use a for loop to iterate over the queries.
  
 Program:
-//type your code here
-
+```
+#include <stdio.h>
+int s[100][1000],c[100]={0};
+int main(){
+    int n,q,x,y,t;
+    scanf("%d %d",&n,&q);
+    while(q--){
+        scanf("%d",&t);
+        t==1? (scanf("%d %d",&x,&y), s[x][c[x]++]=y):
+        t==2?(scanf("%d %d",&x,&y),printf("%d\n",s[x][y])):
+        (scanf("%d",&x),printf("%d\n",c[x]));
+    }
+}
+```
 Output:
-//paste your output here
+![Screenshot 2025-04-26 204708](https://github.com/user-attachments/assets/b0f7c699-dd3e-4917-ba84-719daa2a1aff)
 
 
 Result:
@@ -181,10 +193,34 @@ o	If a character is not a space, it may belong to a word. If it's the first non-
 
 
 Program:
-//type your code here
+```
+#include <stdio.h>
 
+int main() {
+    char sentence[1000];
+    int i = 0, words = 0, inWord = 0;
+
+    fgets(sentence, sizeof(sentence), stdin);
+
+    while (sentence[i] != '\0') {
+        if (sentence[i] != ' ' && sentence[i] != '\n') {
+            if (inWord == 0) {
+                words++;
+                inWord = 1;
+            }
+        } else {
+            inWord = 0;
+        }
+        i++;
+    }
+
+    printf("%d\n", words);
+
+    return 0;
+}
+```
 Output:
-//paste your output here
+![Screenshot 2025-04-26 205456](https://github.com/user-attachments/assets/1c3c7392-a2cd-457f-bcd1-a1c379affb00)
 
 
 
