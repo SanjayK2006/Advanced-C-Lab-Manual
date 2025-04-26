@@ -12,10 +12,23 @@ Algorithm:
 5.	Call the max_of_four function with the input integers and store the result in the greater variable
  
 Program:
-//type your code here
-
+```
+#include<stdio.h>
+#include<math.h>
+int maxim(int a,int b,int c, int d)
+{
+    return fmax(a,fmax(b,fmax(c,d)));
+}
+int main()
+{
+    int a,b,c,d,ans;
+    scanf("%d%d%d%d",&a,&b,&c,&d);
+    ans=maxim(a,b,c,d);
+    printf("%d",ans);
+}
+```
 Output:
-//paste your output here
+![Screenshot 2025-04-26 203054](https://github.com/user-attachments/assets/6b98599a-37ec-4e01-8130-850899d5ccfb)
 
 Result:
 Thus, the program  that create a function to find the greatest number is verified successfully.
@@ -36,10 +49,46 @@ Algorithm:
 7.	Call the calculate_the_max function with input values.
  
 Program:
-//type your code here
-
+```
+#include<stdio.h>
+void maxim(int a,int b)
+{
+    int max1=0,max2=0,max3=0,i,j,and1,or1,xor1;
+    for(i=1;i<=a;i++)
+    {
+        for(j=1;j<=a;j++)
+        {
+            and1=i&j;
+            or1=i|j;
+            xor1=i^j;
+            if(i!=j)
+            {
+                if(max1<and1 && and1<b)
+                {
+                    max1=and1;
+                }
+                if(max2<or1 && or1<b)
+                {
+                    max2=or1;
+                }
+                if(max3<xor1 && xor1<b)
+                {
+                    max3=xor1;
+                }
+            }
+        }
+    }
+    printf("%d\n%d\n%d\n",max1,max2,max3);
+}
+int main()
+{
+    int a,b;
+    scanf("%d%d",&a,&b);
+    maxim(a,b);
+}
+```
 Output:
-//paste your output here
+![Screenshot 2025-04-26 203205](https://github.com/user-attachments/assets/f423be19-505a-4a58-8377-68ff91b3c1ef)
 
 Result:
 Thus, the program to print the maximum values for the AND, OR and XOR comparisons
@@ -86,10 +135,22 @@ Algorithm:
 
 
 Program:
-//type your code here
-
+```
+#include<stdio.h>
+int main()
+{
+    int n,i,arr[200],sum=0;
+    scanf("%d",&n);
+    for(i=0;i<n;i++)
+    {
+        scanf("%d",&arr[i]);
+        sum+=arr[i];
+    }
+    printf("%d",sum);
+}
+```
 Output:
-//paste your output here
+![Screenshot 2025-04-26 204346](https://github.com/user-attachments/assets/221e1491-f87f-4eed-89aa-902b4f464179)
 
  
 
